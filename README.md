@@ -24,9 +24,12 @@ pip install -r requirements.txt
 ---
 
 ### Credit Card Transaction Dataset
+
 The synthetic credit card transaction dataset is provided in `/data/credit_card/`. There are 24M records with 12 fields.
 You would need git-lfs to access the data.
+
 ![figure](./misc/cc_trans_dataset.png)
+
 ---
 
 ### Tabular BERT
