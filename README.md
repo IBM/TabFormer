@@ -6,6 +6,7 @@ This repository provides the pytorch source code, and data for tabular transform
 * Modules for hierarchical transformers for tabular data
 * A synthetic credit card transaction dataset
 * Modified Adaptive Softmax for handling masking
+* Modified _DataCollatorForLanguageModeling_ for tabular data
 * The modules are built within transformers from HuggingFace 🤗. HuggingFace is ❤️ 
 ---
 ### Requirements
