@@ -16,7 +16,7 @@ This repository provides the pytorch source code, and data for tabular transform
 * scikit-learn (0.23.2)
 * Pandas (1.1.2)
 
-(X) represents the version which code is tested on.
+(X) represents the versions which code is tested on.
 
 These can be installed using pip by running : 
 ```
@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 ### Credit Card Transaction Dataset
 
-The synthetic credit card transaction dataset is provided in `/data/credit_card/`. There are 24M records with 12 fields.
+The synthetic credit card transaction dataset is provided in [./data/credit_card](/data/credit_card/). There are 24M records with 12 fields.
 You would need git-lfs to access the data.
 
 ![figure](./misc/cc_trans_dataset.png)
