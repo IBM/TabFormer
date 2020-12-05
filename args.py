@@ -28,7 +28,7 @@ def define_main_parser(parser=None):
                         default="card", choices=['card', 'prsa'],
                         help='root directory for files')
     parser.add_argument("--data_root", type=str,
-                        default="/speech7/multimodal/work/inkpad/card_transaction/data/",
+                        default="./data/",
                         help='root directory for files')
     parser.add_argument("--data_fname", type=str,
                         default="sd190_trans",
