@@ -28,10 +28,10 @@ def define_main_parser(parser=None):
                         default="card", choices=['card', 'prsa'],
                         help='root directory for files')
     parser.add_argument("--data_root", type=str,
-                        default="./data/",
+                        default="./data/credit_card/",
                         help='root directory for files')
     parser.add_argument("--data_fname", type=str,
-                        default="sd190_trans",
+                        default="card_transaction.v1",
                         help='file name of transaction')
     parser.add_argument("--data_extension", type=str,
                         default="",
