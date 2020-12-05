@@ -1,5 +1,5 @@
 torch
 torchvision
-transformers
+transformers==3.2.0
 scikit-learn
 pandas

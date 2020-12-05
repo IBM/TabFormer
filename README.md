@@ -33,6 +33,11 @@ You would need git-lfs to access the data.
 
 ---
 
+### PRSA Dataset
+For PRSA dataset, one have to download the PRSA dataset from [Kaggle](https://www.kaggle.com/sid321axn/beijing-multisite-airquality-data-set) and place them in [./data/card](/data/card/) directory.
+
+---
+
 ### Tabular BERT
 To train a tabular BERT model on credit card transaction or PRSA dataset run :
 ```
