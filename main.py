@@ -11,7 +11,7 @@ from transformers import DataCollatorForLanguageModeling, Trainer, TrainingArgum
 from dataset.prsa import PRSADataset
 from dataset.card import TransactionDataset
 from models.modules import TabFormerBertLM, TabFormerGPT2
-from dataset.dataset import random_split_dataset
+from misc.utils import random_split_dataset
 from dataset.datacollator import TransDataCollatorForLanguageModeling
 
 
