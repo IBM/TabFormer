@@ -1,6 +1,6 @@
 # Tabular Transformers for Modeling Multivariate Time Series
 
-This repository provides the pytorch source code, and data for tabular transformers (TabFormer). Details are described in the paper [Tabular Transformers for Modeling Multivariate Time Series](http://arxiv.org/abs/2011.01843 ), submitted to ICASSP 2021.
+This repository provides the pytorch source code, and data for tabular transformers (TabFormer). Details are described in the paper [Tabular Transformers for Modeling Multivariate Time Series](http://arxiv.org/abs/2011.01843 ), to be presented at ICASSP 2021.
 
 #### Summary
 * Modules for hierarchical transformers for tabular data
@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ### Credit Card Transaction Dataset
 
 The synthetic credit card transaction dataset is provided in [./data/credit_card](/data/credit_card/). There are 24M records with 12 fields.
-You would need git-lfs to access the data.
+You would need git-lfs to access the data. If you are facing issue related to LFS bandwidth, you can use this [direct link](https://ibm.box.com/v/tabformer-data) to access the data.
 
 ![figure](./misc/cc_trans_dataset.png)
 
