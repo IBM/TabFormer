@@ -1,0 +1,17 @@
+name: tabformer
+channels:
+  - anaconda
+  - pytorch
+  - huggingface
+  - conda-forge
+dependencies:
+  - python>=3.8
+  - pytorch=1.7.1=py3.8_cuda11.0.221_cudnn8.0.5_0
+  - torchvision
+  - pandas
+  - scikit-learn
+  - transformers
+  - numpy
+  - libgcc
+  - pip:
+      - transformers==3.2.0

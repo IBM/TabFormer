@@ -46,7 +46,8 @@ class TabFormerGPT2LMHeadModel(GPT2LMHeadModel):
 
             seq_len = shift_logits.size(1)
             total_lm_loss = 0
-            field_names = self.vocab.get_field_keys(input_only=True, ignore_special=True)
+            field_names = self.vocab.get_field_keys(remove_target=True, ignore_special=True)
+
             for field_idx, field_name in enumerate(field_names):
                 col_ids = list(range(field_idx, seq_len, len(field_names)))
                 global_ids_field = self.vocab.get_field_ids(field_name)

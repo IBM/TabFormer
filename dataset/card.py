@@ -239,7 +239,9 @@ class TransactionDataset(Dataset):
         data = pd.read_csv(fname, nrows=self.nrows)
         if self.user_ids:
             log.info(f'Filtering data by user ids list: {self.user_ids}...')
+            self.user_ids = map(int, self.user_ids)
             data = data[data['User'].isin(self.user_ids)]
+
         self.nrows = data.shape[0]
         log.info(f"read data : {data.shape}")
         return data

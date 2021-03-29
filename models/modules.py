@@ -97,6 +97,7 @@ class TabFormerGPT2:
         else:
             model = GPT2LMHeadModel(self.config)
         if not flatten:
-            tab_emb_config = ddict(ncols=self.ncols, vocab_size=len(self.vocab), hidden_size=self.config.hidden_size)
+            tab_emb_config = ddict(vocab_size=len(self.vocab), hidden_size=self.config.hidden_size)
             model = TabFormerBaseModel(model, TabFormerEmbeddings(tab_emb_config))
+
         return model

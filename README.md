@@ -18,9 +18,9 @@ This repository provides the pytorch source code, and data for tabular transform
 
 (X) represents the versions which code is tested on.
 
-These can be installed using pip by running : 
+These can be installed using yaml by running : 
 ```
-pip install -r requirements.txt
+conda env create -f setup.yml
 ```
 ---
 

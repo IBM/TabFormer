@@ -90,7 +90,7 @@ def main(args):
         tab_net = TabFormerGPT2(custom_special_tokens,
                              vocab=vocab,
                              field_ce=args.field_ce,
-                             flatten=args.flatten
+                             flatten=args.flatten,
                              )
 
     log.info(f"model initiated: {tab_net.model.__class__}")
