@@ -131,7 +131,7 @@ class Vocabulary:
     def get_special_tokens(self):
         special_tokens_map = {}
         # TODO : remove the dependency of re-initializing here. retrieve from field_key = SPECIAL
-        keys = ["unk_token", "sep_token", "pad_token", "cls_token", "mask_token", "eos_token", "bos_token"]
+        keys = ["unk_token", "sep_token", "pad_token", "cls_token", "mask_token", "bos_token", "eos_token"]
         for key, token in zip(keys, self.special_tokens):
             token = "%s_%s" % (self.special_field_tag, token)
             special_tokens_map[key] = token
