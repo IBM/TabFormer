@@ -77,10 +77,12 @@ class TabFormerEmbeddings(nn.Module):
         inputs_embeds = self.word_embeddings(input_ids)
         embeds_shape = list(inputs_embeds.size())
 
-        inputs_embeds = inputs_embeds.view([embeds_shape[0], -1, embeds_shape[-1]])
-	inputs_embeds = inputs_embeds.permute(1, 0, 2)
-	inputs_embeds = self.transformer_encoder(inputs_embeds)
-	inputs_embeds = inputs_embeds.permute(1, 0, 2).contiguous()
-        inputs_embeds = self.lin_proj(inputs_embeds.view(embeds_shape[:-2] + [-1]))
+        inputs_embeds = inputs_embeds.view([-1] + embeds_shape[-2:])
+        inputs_embeds = inputs_embeds.permute(1, 0, 2)
+        inputs_embeds = self.transformer_encoder(inputs_embeds)
+        inputs_embeds = inputs_embeds.permute(1, 0, 2)
+        inputs_embeds = inputs_embeds.contiguous().view(embeds_shape[0:2]+[-1])
+
+        inputs_embeds = self.lin_proj(inputs_embeds)
 
         return inputs_embeds
