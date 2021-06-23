@@ -119,14 +119,33 @@ class Vocabulary:
                 token = "%s_%s" % (field, token)
                 fout.write("%s\n" % token)
 
-    def get_field_keys(self, remove_target=True, ignore_special=False):
+    def get_field_keys(self, input_only=True, ignore_special=False):
         keys = list(self.field_keys.keys())
 
-        if remove_target and self.target_column_name in keys:
+        if input_only:
             keys.remove(self.target_column_name)
         if ignore_special:
             keys.remove(self.special_field_tag)
         return keys
+
+    def get_from_local_ids(self, field_name, local_ids, what_to_get='global_ids'):
+        device = local_ids.device
+
+        def map_local_ids_to_global_ids(lid):
+            return self.get_field_ids(field_name)[lid] if lid != -100 else -100
+
+        def map_local_ids_to_tokens(lid):
+            gid = map_local_ids_to_global_ids(lid)
+            return f'{self.id2token[gid][1]}_{self.id2token[gid][0]}' if gid != -100 else '-'
+
+        if what_to_get == 'global_ids':
+            return local_ids.cpu().apply_(map_local_ids_to_global_ids).to(device)
+        elif what_to_get == 'tokens':
+            vectorized_token_map = np.vectorize(map_local_ids_to_tokens)
+            new_array_for_tokens = local_ids.detach().clone().cpu().numpy()
+            return vectorized_token_map(new_array_for_tokens)
+        else:
+            raise ValueError("Only 'global_ids' or 'tokens' can be passed as value of the 'what_to_get' parameter.")
 
     def get_special_tokens(self):
         special_tokens_map = {}

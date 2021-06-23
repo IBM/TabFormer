@@ -20,6 +20,16 @@ class TransDataCollatorForLanguageModeling(DataCollatorForLanguageModeling):
                 labels[labels == self.tokenizer.pad_token_id] = -100
             return {"input_ids": batch, "labels": labels}
 
+    def collate_batch(self, examples: List[torch.Tensor]) -> Dict[str, torch.Tensor]:
+        batch = self._tensorize_batch(examples)
+        sz = batch.shape
+        if self.mlm:
+            batch = batch.view(sz[0], -1)
+            inputs, labels = self.mask_tokens(batch)
+            return {"input_ids": inputs.view(sz), "masked_lm_labels": labels.view(sz)}
+        else:
+            return {"input_ids": batch, "labels": batch}
+
     def mask_tokens(self, inputs: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
         """
         Prepare masked tokens inputs/labels for masked language modeling: 80% MASK, 10% random, 10% original.

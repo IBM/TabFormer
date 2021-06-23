@@ -111,8 +111,6 @@ def main(args):
         logging_dir=args.log_dir,  # directory for storing logs
         save_steps=args.save_steps,
         do_train=args.do_train,
-        # do_eval=args.do_eval,
-        # evaluation_strategy="epoch",
         prediction_loss_only=True,
         overwrite_output_dir=True,
         # eval_steps=10000
