@@ -68,12 +68,13 @@ Description of some options (more can be found in _`args.py`_):
 ### Citation
 
 ```
-@misc{padhi2020tabular,
-      title={Tabular Transformers for Modeling Multivariate Time Series}, 
-      author={Inkit Padhi and Yair Schiff and Igor Melnyk and Mattia Rigotti and Youssef Mroueh and Pierre Dognin and Jerret Ross and Ravi Nair and Erik Altman},
-      year={2020},
-      eprint={2011.01843},
-      archivePrefix={arXiv},
-      primaryClass={cs.LG}
+@inproceedings{padhi2021tabular,
+  title={Tabular transformers for modeling multivariate time series},
+  author={Padhi, Inkit and Schiff, Yair and Melnyk, Igor and Rigotti, Mattia and Mroueh, Youssef and Dognin, Pierre and Ross, Jerret and Nair, Ravi and Altman, Erik},
+  booktitle={ICASSP 2021-2021 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)},
+  pages={3565--3569},
+  year={2021},
+  organization={IEEE},
+  url={https://ieeexplore.ieee.org/document/9414142}
 }
 ```
