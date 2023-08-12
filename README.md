@@ -26,7 +26,7 @@ conda env create -f setup.yml
 
 ### Credit Card Transaction Dataset
 
-The synthetic credit card transaction dataset is provided in [./data/credit_card](/data/credit_card/). There are 24M records with 12 fields.
+The synthetic credit card transaction dataset is provided in [./data/credit_card](/data/credit_card/) and also on [Kaggle](https://www.kaggle.com/datasets/ealtman2019/credit-card-transactions). There are 24M records with 12 fields.
 You would need git-lfs to access the data. If you are facing issue related to LFS bandwidth, you can use this [direct link](https://ibm.box.com/v/tabformer-data) to access the data. You can then ignore git-lfs files by prefixing `GIT_LFS_SKIP_SMUDGE=1` to the `git clone ..` command.
 
 ![figure](./misc/cc_trans_dataset.png)
